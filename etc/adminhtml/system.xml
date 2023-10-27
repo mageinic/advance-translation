@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageINIC
+ * Copyright (C) 2023 MageINIC <support@mageinic.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see https://opensource.org/licenses/gpl-3.0.html.
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category MageINIC
+ * @package MageINIC_Translation
+ * @copyright Copyright (c) 2023 MageINIC (https://www.mageinic.com/)
+ * @license https://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author MageINIC <support@mageinic.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mageinic" translate="label" sortOrder="500">
+            <label>MageINIC</label>
+        </tab>
+        <section id="translation" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Translation</label>
+            <tab>mageinic</tab>
+            <resource>MageINIC_Translation::config_translation</resource>
+            <group id="view" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Translation Settings</label>
+                <field id="export" translate="label" type="MageINIC\Translation\Block\Adminhtml\Form\Field\Export"
+                       sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Export</label>
+                </field>
+                <field id="import" translate="label,comment"
+                       type="MageINIC\Translation\Block\Adminhtml\Form\Field\Import"
+                       sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Import</label>
+                    <backend_model>MageINIC\Translation\Model\Config\Backend\Translation</backend_model>
+                    <comment>First download the export, after that add your changes in the CSV file, then import the CSV
+                        File.
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

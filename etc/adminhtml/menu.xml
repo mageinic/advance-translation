@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageINIC
+ * Copyright (C) 2023 MageINIC <support@mageinic.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see https://opensource.org/licenses/gpl-3.0.html.
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category MageINIC
+ * @package MageINIC_Translation
+ * @copyright Copyright (c) 2023 MageINIC (https://www.mageinic.com/)
+ * @license https://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author MageINIC <support@mageinic.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MageINIC_Translation::translation" translate="title" title="Translation" module="MageINIC_Translation"
+             sortOrder="30" parent="MageINIC_Core::core" resource="MageINIC_Translation::translation"/>
+        <add id="MageINIC_Translation::translation_manage" translate="title" title="Translation"
+             module="MageINIC_Translation" sortOrder="10" parent="MageINIC_Translation::translation"
+             action="translation/index/" resource="MageINIC_Translation::translation_manage"/>
+        <add id="MageINIC_Translation::settings" title="Configuration" module="MageINIC_Translation"
+             parent="MageINIC_Translation::translation" sortOrder="30"
+             action="adminhtml/system_config/edit/section/translation"
+             resource="MageINIC_Translation::config_translation"/>
+    </menu>
+</config>

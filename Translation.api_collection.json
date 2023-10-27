@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "aec51898-fdc8-45ce-bb0c-4c1da5d27ad0",
+		"name": "Translation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18921834"
+	},
+	"item": [
+		{
+			"name": "post Translation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"translation\": {\n    \"string\": \"string\",\n    \"translate\": \"string\",\n    \"store_id\": \"string\",\n    \"locale\": \"string\"\n  }\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/rest/all/V1/translation",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"rest",
+						"all",
+						"V1",
+						"translation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Translation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"155\",\n  \"string\": \"Boys\",\n  \"translate\": \"أولاد\",\n  \"store_id\": \"0\",\n  \"locale\": \"ar_SA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/rest/all/V1/translation/{id}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"rest",
+						"all",
+						"V1",
+						"translation",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Translation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"translation\": {\n    \"id\": \"string\",\n    \"string\": \"string\",\n    \"translate\": \"string\",\n    \"store_id\": \"string\",\n    \"locale\": \"string\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/rest/all/V1/translation/{id}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"rest",
+						"all",
+						"V1",
+						"translation",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Translation",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "true",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/rest/all/V1/translation/{id}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"rest",
+						"all",
+						"V1",
+						"translation",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
