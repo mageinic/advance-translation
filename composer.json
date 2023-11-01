@@ -1,17 +1,18 @@
 {
     "name": "mageinic/translation",
-    "description": "Translation by MageINIC team",
+    "description": "Translation by MageINIC. Advance Translation extension simplifies the process of translating your online store's content. It allows you to manage translations directly from the admin area, eliminating the need to manually edit CSV files. You can configure translations at the store view level, making it easy to offer multilingual support on specific store views.",
     "require": {
         "php": "^8.0",
         "mageinic/core": "1.0.*",
         "magento/module-backend": "102.0.*",
         "magento/module-store": "101.1.*",
-        "magento/module-translation": "100.4.6"
+        "magento/module-translation": "100.4.6.*"
     },
     "type": "magento2-module",
     "version": "1.0.0",
     "license": [
-        "Commercial"
+        "OSL-3.0",
+        "AFL-3.0"
     ],
     "authors": [
         {
