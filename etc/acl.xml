@@ -29,10 +29,10 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="MageINIC_Core::core" title="MageINIC Extensions" translate="title">
+                <resource id="MageINIC_Core::core">
                     <resource id="MageINIC_Translation::translation" translate="title" title="Translation"
                               sortOrder="10">
-                        <resource id="MageINIC_Translation::translation_manage" translate="title" title="Translation Manager"
+                        <resource id="MageINIC_Translation::translation_manage" translate="title" title="Translation"
                                   sortOrder="20">
                             <resource id="MageINIC_Translation::save" translate="title" title="Save" sortOrder="10"/>
                             <resource id="MageINIC_Translation::translation_delete" translate="title" title="Delete"
@@ -45,7 +45,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="MageINIC_Core::core_config" title="MageINIC Extensions Section" translate="title">
+                            <resource id="MageINIC_Core::core_config">
                                 <resource id="MageINIC_Translation::config_translation"
                                           title="Translation Configuration"/>
                             </resource>

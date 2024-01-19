@@ -70,7 +70,6 @@ class MassDelete extends Action
      */
     public function execute(): Redirect
     {
-
         $deleteIds = $this->getRequest()->getPost('key_id');
         $collection = $this->collectionFactory->create();
         $collection->addFieldToFilter('key_id', ['in' => $deleteIds]);

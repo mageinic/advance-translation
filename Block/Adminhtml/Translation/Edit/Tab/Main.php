@@ -26,12 +26,12 @@
 namespace MageINIC\Translation\Block\Adminhtml\Translation\Edit\Tab;
 
 use MageINIC\Translation\Helper\Data;
+use MageINIC\Translation\Model\Config\Source\LocaleOption;
 use MageINIC\Translation\Model\TranslationFactory;
 use Magento\Backend\Block\Template\Context;
 use Magento\Backend\Block\Widget\Form\Generic;
 use Magento\Backend\Block\Widget\Tab\TabInterface;
 use Magento\Cms\Model\Page;
-use Magento\Config\Model\Config\Source\Locale;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Data\FormFactory;
 use Magento\Framework\Exception\LocalizedException;
@@ -48,11 +48,6 @@ class Main extends Generic implements TabInterface
      * @var Store
      */
     protected Store $_systemStore;
-
-    /**
-     * @var Locale
-     */
-    protected Locale $locale;
 
     /**
      * @var TranslationFactory
@@ -75,13 +70,18 @@ class Main extends Generic implements TabInterface
     protected Data $helper;
 
     /**
+     * @var LocaleOption
+     */
+    private LocaleOption $localeOption;
+
+    /**
      * Main constructor.
      *
      * @param Context $context
      * @param Registry $registry
      * @param FormFactory $formFactory
      * @param Store $systemStore
-     * @param Locale $locale
+     * @param LocaleOption $localeOption
      * @param TranslationFactory $_translation
      * @param RequestInterface $request
      * @param Data $helper
@@ -92,18 +92,18 @@ class Main extends Generic implements TabInterface
         Registry $registry,
         FormFactory $formFactory,
         Store $systemStore,
-        Locale $locale,
+        LocaleOption $localeOption,
         TranslationFactory $_translation,
         RequestInterface $request,
         Data $helper,
         array $data = []
     ) {
         $this->_systemStore = $systemStore;
-        $this->locale = $locale;
         $this->_translation = $_translation;
         $this->request = $request;
         $this->helper = $helper;
         parent::__construct($context, $registry, $formFactory, $data);
+        $this->localeOption = $localeOption;
     }
 
     /**
@@ -175,7 +175,7 @@ class Main extends Generic implements TabInterface
                 'title' => __(' Locale'),
                 'required' => true,
                 'disabled' => $isElementDisabled,
-                'values' => $this->locale->toOptionArray()
+                'values' => $this->localeOption->toOptionArray()
             ]
         );
 
